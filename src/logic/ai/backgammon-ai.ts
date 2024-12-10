@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import Game from '../models/game';
 import ThisTurn from '../models/this-turn';
 import { calcPossibleMoves, calcGettingOutOfOutMoves } from '../calculations/calc-possible-moves';
@@ -114,5 +113,3 @@ export class BackgammonAI {
     this.difficulty = difficulty;
   }
 }
-=======
->>>>>>> Stashed changes
