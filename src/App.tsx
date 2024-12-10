@@ -108,7 +108,7 @@ function App() {
         startGame={startGame}
         select={select}
       />
-      
+
       <AICommentary game={game} thisTurn={thisTurn} />
     </>
   );
