@@ -10,6 +10,7 @@ import Game from "./logic/models/game";
 import ThisMove from "./logic/models/this-move";
 import BoardTop from "./frontend/BoardTop";
 import { checkCantMove } from "./logic/calculations/calc-possible-moves";
+import AICommentary from "./frontend/components/AICommentary";
 
 export const toastStyle = (thisTurn: ThisTurn) => {
   return {
@@ -87,6 +88,7 @@ function App() {
         startGame={startGame}
         select={select}
       />
+      <AICommentary game={game} thisTurn={thisTurn} />
     </>
   );
 }
