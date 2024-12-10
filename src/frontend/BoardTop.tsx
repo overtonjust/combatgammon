@@ -12,11 +12,15 @@ interface BoardProps {
 	thisMove: ThisMove;
 	select: any;
 }
+interface Gift {
+	desc: string;
+	icon: string;
+}
 
 export default function BoardTop(props: BoardProps) {
-	const [gifts, setGifts] = useState<Record<number, string>>({});
+	const [gifts, setGifts] = useState<Record<number, Gift>>({});
 
-	function randomizeGiftPositionsList(gifts: string[]) {
+	function randomizeGiftPositionsList(gifts: Gift[]): Record<number, Gift> {
 		const boardSize = 24;
 		// Create an array of all possible positions
 		const positions = Array.from({ length: boardSize }, (_, i) => i);
@@ -31,7 +35,7 @@ export default function BoardTop(props: BoardProps) {
 		}
 
 		// Map gifts to the shuffled positions, ensuring output is an object
-		const randomizedGifts: Record<number, string> = {};
+		const randomizedGifts: Record<number, Gift> = {};
 		for (let i = 0; i < gifts.length; i++) {
 			randomizedGifts[positions[i]] = gifts[i];
 		}
@@ -40,14 +44,12 @@ export default function BoardTop(props: BoardProps) {
 	}
 
 	useEffect(() => {
-		const giftItems = [
-			"double dice roll",
-			"send opponent backwards",
-			"destroy Wall",
-			"test",
+		const giftItems: Gift[] = [
+			{ desc: "double dice roll", icon: "🎁" },
+			{ desc: "send opponent backwards", icon: "👈" },
+			{ desc: "destroy Wall", icon: "🔥" },
 		];
 		setGifts(randomizeGiftPositionsList(giftItems));
-		console.log(gifts);
 	}, []);
 
 	return (
@@ -103,7 +105,7 @@ export default function BoardTop(props: BoardProps) {
 					"Red"
 				}
 			>
-				<p>{gifts[props.barIdx]}</p>
+				{gifts[props.barIdx] && <p>{gifts[props.barIdx].icon}</p>}
 				{props.bar.map(
 					(piece: string, pieceIdx: number) =>
 						pieceIdx < 6 && (

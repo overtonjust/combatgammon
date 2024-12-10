@@ -36,6 +36,8 @@ export function movingPiece(
     return game;
   }
 
+  console.log(toBarIdx,'toBarIdx');
+  console.log(thisTurn.turnPlayer,'turn player');
   // Taking a piece out to end bar
   if (fromBarIdx === thisTurn.turnPlayer.endBarIdx) {
     thisTurn.turnPlayer.endBar.push(
