@@ -5,6 +5,9 @@ import Bar from "./components/Bar";
 import Board from "./components/Board";
 import EndBar from "./components/EndBar";
 import Piece from "./components/Piece";
+import './styles.css'
+
+
 
 interface BoardProps {
   game: Game;
@@ -15,6 +18,10 @@ interface BoardProps {
 export default function BoardTop(props: BoardProps) {
   return (
     <div className="board-top">
+
+      <div className="item-holder">
+        <h4 className="item-header">White Power-ups</h4>
+      </div>
       <CreateEndBar
         player={props.game.whitePlayer}
         key={"left-bar"}
@@ -28,6 +35,20 @@ export default function BoardTop(props: BoardProps) {
         key={"right-bar"}
         {...props}
       />
+
+  <div style={{
+          width: '200px',
+          height: '80px', 
+          backgroundColor: '#CD5C1C',
+          border: '2px solid #8B4513',
+          borderRadius: '8px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '10px'
+        }}>
+          <h4 style={{color: '#fff', margin: '0 0 10px 0'}}>Orange Powers</h4>
+        </div>
     </div>
   );
 
@@ -58,9 +79,9 @@ export default function BoardTop(props: BoardProps) {
         onClick={() => props.select(props.barIdx)}
         key={props.barIdx}
         fill={
-          (props.thisMove.canGoTo.includes(props.barIdx) && "#671010") ||
-          (props.barIdx % 2 === 0 && props.barIdx > 11 && "#232937") ||
-          (props.barIdx % 2 !== 0 && props.barIdx <= 11 && "#232937") ||
+          (props.thisMove.canGoTo.includes(props.barIdx) && "#21a315") ||
+          (props.barIdx % 2 === 0 && props.barIdx > 11 && "#D35D19") ||
+          (props.barIdx % 2 !== 0 && props.barIdx <= 11 && "#D35D19") ||
           (props.barIdx % 2 === 0 && props.barIdx <= 11 && "#e0ded7") ||
           (props.barIdx % 2 !== 0 && props.barIdx > 11 && "#e0ded7") ||
           "Red"
@@ -100,7 +121,7 @@ export default function BoardTop(props: BoardProps) {
       <EndBar
         onClick={() => props.select(props.player.endBarIdx)}
         key={props.player.endBarIdx}
-        fill={props.player.name === "White" ? "#e0ded7" : "#232937"}
+        fill={props.player.name === "White" ? "#e0ded7" : "#CD5C1C"}
       >
         {props.player.endBar.map((piece, pieceIdx) => (
           <CreatePiece

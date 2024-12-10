@@ -99,6 +99,12 @@ function App() {
 
   return (
     <>
+       
+
+       
+ 
+
+
       <BoardTop game={game} thisMove={thisMove} select={select} />
 
       <BoardBottom

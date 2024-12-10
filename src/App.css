@@ -12,14 +12,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #141415;
+  background-color: #D35D19;
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #4a66b3;
 }
 
 button:focus,
@@ -28,8 +28,8 @@ button:focus-visible {
 }
 
 .board-top {
-  background-color: black;
-  border: 10px solid #141415;
+  background-color: #2C3E6E;
+  border: 10px solid #2C3E6E;
   border-bottom: 0;
   padding: 15px;
   display: flex;
@@ -40,9 +40,10 @@ button:focus-visible {
 }
 
 .board-bottom {
-  background-color: black;
-  border: 10px solid #141415;
+  background-color: #2C3E6E;
+  border: 10px solid #2C3E6E;
   padding: 15px;
   display: flex;
   justify-content: space-between;
 }
+

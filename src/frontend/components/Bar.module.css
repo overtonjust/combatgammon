@@ -18,7 +18,8 @@
 }
 
 .barWrapper:hover .polygon {
-  fill: #7579ba;
+  /* fill: #7579ba; */
+  fill: #4a66b3;
 }
 
 .barWrapper:focus,

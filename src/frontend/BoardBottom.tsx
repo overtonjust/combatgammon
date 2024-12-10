@@ -27,7 +27,7 @@ export default function BoardBottom(props: BoardProps) {
       <CreateOutBar
         player={props.game.blackPlayer}
         isLeft={false}
-        fill={"#232937"}
+        fill={"#CD5C1C"}
         {...props}
       />
     </div>

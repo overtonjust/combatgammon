@@ -1,5 +1,5 @@
 .commentary {
-  background: rgba(0, 0, 0, 0.8);
+  background: #2C3E6E;
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem auto;
@@ -9,7 +9,7 @@
 }
 
 .commentary h3 {
-  color: #7579ba;
+  color: #D35D19;
   margin: 0 0 0.5rem 0;
 }
 
