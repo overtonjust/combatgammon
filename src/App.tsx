@@ -10,6 +10,8 @@ import Game from "./logic/models/game";
 import ThisMove from "./logic/models/this-move";
 import BoardTop from "./frontend/BoardTop";
 import { checkCantMove } from "./logic/calculations/calc-possible-moves";
+import { BackgammonAI } from './logic/ai/backgammon-ai';
+import AICommentary from "./frontend/components/AICommentary";
 
 export const toastStyle = (thisTurn: ThisTurn) => {
   return {
@@ -29,6 +31,7 @@ function App() {
   const [game, setGame] = useState(Game.new);
   const [thisTurn, setThisTurn] = useState(ThisTurn.new);
   const [thisMove, setThisMove] = useState(ThisMove.new);
+  const [ai] = useState(new BackgammonAI('medium'));
 
   window.onload = () => backgammon();
 
@@ -61,6 +64,10 @@ function App() {
       returnedThisTurn = checkCantMove(game, returnedThisTurn.clone());
 
     setThisTurn(returnedThisTurn);
+
+    if (returnedThisTurn.turnPlayer.name === 'Black') {
+      setTimeout(makeAIMove, 1000);
+    }
   }
 
   function select(index: number | string) {
@@ -76,6 +83,20 @@ function App() {
     setThisMove(returnedThisMove);
   }
 
+  function makeAIMove() {
+    if (!game.gameOn || !thisTurn.rolledDice) return;
+    
+    try {
+      const aiDecision = ai.decideBestMove(game, thisTurn);
+      select(aiDecision.selectedMove.fromIdx);
+      setTimeout(() => {
+        select(aiDecision.selectedMove.toIdx);
+      }, 500);
+    } catch (error) {
+      console.error('AI move error:', error);
+    }
+  }
+
   return (
     <>
       <BoardTop game={game} thisMove={thisMove} select={select} />
@@ -87,6 +108,8 @@ function App() {
         startGame={startGame}
         select={select}
       />
+      
+      <AICommentary game={game} thisTurn={thisTurn} />
     </>
   );
 }

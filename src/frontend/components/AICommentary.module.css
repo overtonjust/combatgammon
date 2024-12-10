@@ -1,0 +1,19 @@
+.commentary {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.commentary h3 {
+  color: #7579ba;
+  margin: 0 0 0.5rem 0;
+}
+
+.commentary p {
+  margin: 0;
+  line-height: 1.4;
+} 
