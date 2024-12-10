@@ -1,17 +1,20 @@
 #root {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: clamp(0.5em, 2vw, 0.9em);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 0.9em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
   background-color: #141415;
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
@@ -29,20 +32,73 @@ button:focus-visible {
 
 .board-top {
   background-color: black;
-  border: 10px solid #141415;
+  border: clamp(5px, 1vw, 10px) solid #141415;
   border-bottom: 0;
-  padding: 15px;
+  padding: clamp(8px, 1.5vw, 15px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 25px;
-  padding-right: 25px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .board-bottom {
   background-color: black;
-  border: 10px solid #141415;
-  padding: 15px;
+  border: clamp(5px, 1vw, 10px) solid #141415;
+  padding: clamp(8px, 1.5vw, 15px);
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.start-button {
+  width: clamp(200px, 50vw, 300px);
+  padding: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  background: #7579ba;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 1001;
+}
+
+.start-button:hover {
+  background: #8589ca;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(117, 121, 186, 0.5);
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+  
+  .board-top, .board-bottom {
+    padding: 8px;
+  }
+}
+
+.preview-mode {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.start-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 1rem;
 }

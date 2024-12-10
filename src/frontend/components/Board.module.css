@@ -1,12 +1,18 @@
 .board {
-  width: 700px;
-  height: 615px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   background: black;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 17px;
-  border: 10px solid black;
+  gap: clamp(8px, 1.5vw, 17px);
+  border: clamp(5px, 1vw, 10px) solid black;
   align-items: center;
   align-content: space-between;
-  /* margin: 10px; */
+}
+
+@media (max-width: 768px) {
+  .board {
+    gap: 8px;
+  }
 }
