@@ -18,7 +18,7 @@ export default class Game {
       "1px solid black"
     );
     this._blackPlayer = new Player(
-      "#2C3E6E",
+      "Black",
       " ORANGE ",
       "BlackOutBar",
       "BlackEndBar",
@@ -34,15 +34,15 @@ export default class Game {
     [],
     [],
     [],
-    ["Orange", "Orange", "Orange"],
+    ["Black", "Black", "Black"],
     [],
-    ["Orange", "Orange", "Orange", "Orange", "Orange"],
+    ["Black", "Black", "Black", "Black", "Black"],
     [],
     [],
     [],
     [],
     ["White", "White"],
-    ["Orange", "Orange", "Orange", "Orange", "Orange"],
+    ["Black", "Black", "Black", "Black", "Black"],
     [],
     [],
     [],
@@ -53,7 +53,7 @@ export default class Game {
     [],
     [],
     [],
-    ["Orange", "Orange"],
+    ["Black", "Black"],
   ];
 
   public get gameOn(): boolean {
