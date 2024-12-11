@@ -154,42 +154,40 @@ function App() {
  return (
    <>
      <GameTitle />
-     <GameModeSelector
-       mode={gameMode}
-       onModeChange={handleModeChange}
-       onModeSelect={handleModeSelect}
-       gameStarted={game.gameOn}
-       showModeSelect={showModeSelect}
-     />
-     {!showModeSelect && (
-       <>
-         <div className={game.gameOn ? '' : 'preview-mode'}>
-           <BoardTop
-             game={game}
-             thisMove={thisMove}
-             select={select}
-           />
-           <BoardBottom
-             game={game}
-             thisMove={thisMove}
-             rollDice={rollDice}
-             startGame={startGame}
-             select={select}
-           />
-           <AICommentary game={game} thisTurn={thisTurn} />
-         </div>
-         {!game.gameOn && (
-           <div className='start-overlay'>
-             <button
-               onClick={() => handleStartGame(gameMode)}
-               className='start-button'
-             >
-               Begin Game
-             </button>
+     <div className="game-container">
+       <GameModeSelector 
+         mode={gameMode} 
+         onModeChange={handleModeChange}
+         onModeSelect={handleModeSelect}
+         gameStarted={game.gameOn}
+         showModeSelect={showModeSelect}
+       />
+       {!showModeSelect && (
+         <>
+           <div className={game.gameOn ? "" : "preview-mode"}>
+             <BoardTop game={game} thisMove={thisMove} select={select} />
+             <BoardBottom
+               game={game}
+               thisMove={thisMove}
+               rollDice={rollDice}
+               startGame={startGame}
+               select={select}
+             />
+             <AICommentary game={game} thisTurn={thisTurn} />
            </div>
-         )}
-       </>
-     )}
+           {!game.gameOn && (
+             <div className="start-overlay">
+               <button 
+                 onClick={() => handleStartGame(gameMode)}
+                 className="start-button"
+               >
+                 Begin Game
+               </button>
+             </div>
+           )}
+         </>
+       )}
+     </div>
    </>
  );
 }

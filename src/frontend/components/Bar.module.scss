@@ -1,0 +1,67 @@
+.barWrapper {
+  height: 100%;
+  width: clamp(20px, calc(7vw - 10px), 45px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 1315px) {
+    width: calc(6.5vw - 8px);
+  }
+
+  @media (max-width: 768px) {
+    width: calc(6vw - 6px);
+  }
+
+  @media (max-width: 480px) {
+    width: calc(5.5vw - 4px);
+  }
+
+  @media (max-width: 375px) {
+    width: calc(4.8vw - 1px);
+  }
+
+  @media (max-width: 320px) {
+    width: calc(4.5vw - 1px);
+  }
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+
+.polygon {
+  transition: fill 0.2s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.barWrapper:hover .polygon {
+  fill: #4a66b3;
+}
+
+.barWrapper:focus,
+.barWrapper:focus-visible .polygon {
+  outline: clamp(1px, 0.5vw, 4px) auto -webkit-focus-ring-color;
+} 

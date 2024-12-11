@@ -1,20 +1,27 @@
 .titleContainer {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 90;
-  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+  backdrop-filter: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  pointer-events: none;
   
   h1 {
     color: #7579ba;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin: 0;
-    padding-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
   }
 } 
