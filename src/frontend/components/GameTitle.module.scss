@@ -1,3 +1,5 @@
+@import '../../shared.scss';
+
 .titleContainer {
   position: sticky;
   top: 0;
@@ -5,14 +7,14 @@
   right: 0;
   z-index: 1000;
   padding: 1rem 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+  background: $blue;
   backdrop-filter: none;
   margin-bottom: 1rem;
   text-align: center;
   pointer-events: none;
   
   h1 {
-    color: #7579ba;
+    color: $orange;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

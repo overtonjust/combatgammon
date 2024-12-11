@@ -19,8 +19,8 @@ export default function BoardTop(props: BoardProps) {
   return (
     <div className="board-top">
 
-      <div className="item-holder">
-        <h4 className="item-header">White Power-ups</h4>
+      <div className="item-holder item-left">
+        <h4 className="item-header header-left">White Power-ups</h4>
       </div>
       <CreateEndBar
         player={props.game.whitePlayer}
@@ -36,19 +36,10 @@ export default function BoardTop(props: BoardProps) {
         {...props}
       />
 
-  <div style={{
-          width: '200px',
-          height: '80px', 
-          backgroundColor: '#CD5C1C',
-          border: '2px solid #8B4513',
-          borderRadius: '8px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          padding: '10px'
-        }}>
-          <h4 style={{color: '#fff', margin: '0 0 10px 0'}}>Orange Powers</h4>
-        </div>
+      <div className="item-holder item-right">
+        <h4 className="item-header header-right">Orange Power-ups</h4>
+      </div>
+
     </div>
   );
 

@@ -2,17 +2,33 @@
 .item-holder {
     width: 200px;
     height: 80px;
-    background-color: #e0ded7;
-    border: 2px solid #D35D19;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    margin: 0 10px;
+}
+
+.item-left {
+    background-color: #e0ded7;
+    border: 2px solid #D35D19;
+    margin-right: 20px;
+}
+
+.item-right {
+    margin-left: 20px;
+    background-color: #D35D19;
+    border: 2px solid #e0ded7;
 }
 
 .item-header{
-    color: #D35D19;
     margin: 0 0 10px 0;
+}
+
+.header-left {
+    color: #D35D19;
+}
+
+.header-right {
+    color: #e0ded7;
 }

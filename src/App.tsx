@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import "./App.css";
+import "./App.scss";
 import { backgammon, startingGame } from "./logic/events/start-game";
 import { rollingDice } from "./logic/events/roll-dice";
 import { selecting } from "./logic/events/select";
