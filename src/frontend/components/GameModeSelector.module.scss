@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  margin: clamp(4em, 6vh, 6em) auto;
+  width: fit-content;
+  z-index: 100;
+  
+  &.fullscreen {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+
+.selector {
+  background: rgba(0, 0, 0, 0.8);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: center;
+  width: fit-content;
+  min-width: 250px;
+  max-width: 300px;
+  
+  h2 {
+    color: #7579ba;
+    margin: 0;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    white-space: nowrap;
+  }
+}
+
+.dropdown {
+  padding: clamp(0.4rem, 1.5vw, 0.5rem);
+  min-height: 44px;
+  width: 100%;
+  border-radius: 4px;
+  background: #141415;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #333;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    border-color: #7579ba;
+  }
+}
+
+.continueButton {
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.5rem, 4vw, 2rem);
+  min-height: 44px;
+  width: 100%;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  background: #7579ba;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover {
+    background: #8589ca;
+    transform: scale(1.05);
+  }
+} 

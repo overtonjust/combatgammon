@@ -1,6 +1,6 @@
 .barWrapper {
-  height: 250px;
-  width: 40px;
+  height: clamp(200px, 40vh, 250px);
+  width: clamp(30px, 8vw, 40px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,11 +15,19 @@
   flex-direction: column;
   align-content: center;
   height: 100%;
+  width: 100%;
 }
 
 .barWrapper:hover .polygon {
   /* fill: #7579ba; */
   fill: #4a66b3;
+}
+
+@media (max-width: 480px) {
+  .barWrapper {
+    height: 180px;
+    width: 25px;
+  }
 }
 
 .barWrapper:focus,
