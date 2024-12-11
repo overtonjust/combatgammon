@@ -1,3 +1,5 @@
+@import '../../shared.scss';
+
 .container {
   position: relative;
   margin: clamp(4em, 6vh, 6em) auto;
@@ -19,7 +21,7 @@
 }
 
 .selector {
-  background: rgba(0, 0, 0, 0.8);
+  background: $blue;
   padding: clamp(1.5rem, 3vw, 2rem);
   border-radius: 8px;
   display: flex;
@@ -31,7 +33,7 @@
   max-width: 300px;
   
   h2 {
-    color: #7579ba;
+    color: $orange;
     margin: 0;
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     white-space: nowrap;
@@ -43,8 +45,8 @@
   min-height: 44px;
   width: 100%;
   border-radius: 4px;
-  background: #141415;
-  color: rgba(255, 255, 255, 0.87);
+  background: $highlight;
+  color: $white;
   border: 1px solid #333;
   cursor: pointer;
   
@@ -59,7 +61,7 @@
   min-height: 44px;
   width: 100%;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  background: #7579ba;
+  background: $orange;
   color: white;
   border: none;
   border-radius: 4px;
@@ -67,7 +69,7 @@
   transition: all 0.2s;
   
   &:hover {
-    background: #8589ca;
+    background: $orange;
     transform: scale(1.05);
   }
 } 

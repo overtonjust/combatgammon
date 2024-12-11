@@ -11,18 +11,18 @@ export default class Game {
     this._board = Game.initialState();
     this._whitePlayer = new Player(
       "White",
-      "⚪ WHITE ⚪",
+      " WHITE ",
       "WhiteOutBar",
       "WhiteEndBar",
       "White",
       "1px solid black"
     );
     this._blackPlayer = new Player(
-      "Black",
-      "⚫ BLACK ⚫",
+      "#2C3E6E",
+      " ORANGE ",
       "BlackOutBar",
       "BlackEndBar",
-      "Black",
+      "#2C3E6E",
       "1px solid #e9e2d6"
     );
   }
@@ -34,15 +34,15 @@ export default class Game {
     [],
     [],
     [],
-    ["Black", "Black", "Black"],
+    ["Orange", "Orange", "Orange"],
     [],
-    ["Black", "Black", "Black", "Black", "Black"],
+    ["Orange", "Orange", "Orange", "Orange", "Orange"],
     [],
     [],
     [],
     [],
     ["White", "White"],
-    ["Black", "Black", "Black", "Black", "Black"],
+    ["Orange", "Orange", "Orange", "Orange", "Orange"],
     [],
     [],
     [],
@@ -53,7 +53,7 @@ export default class Game {
     [],
     [],
     [],
-    ["Black", "Black"],
+    ["Orange", "Orange"],
   ];
 
   public get gameOn(): boolean {

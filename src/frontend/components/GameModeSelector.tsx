@@ -19,27 +19,32 @@ export default function GameModeSelector({
   if (!showModeSelect && !gameStarted) return null;
   
   return (
-    <div className={`${styles.container} ${showModeSelect ? styles.fullscreen : ''}`}>
-      <div className={styles.selector}>
-        <h2>{showModeSelect ? 'Select Game Mode' : 'Game Mode:'}</h2>
-        <select 
-          value={mode}
-          onChange={(e) => onModeChange(e.target.value as 'multiplayer' | 'ai')}
-          className={styles.dropdown}
-          disabled={gameStarted}
-        >
-          <option value="multiplayer">Multiplayer</option>
-          <option value="ai">Play vs AI</option>
-        </select>
-        {showModeSelect && (
-          <button 
-            onClick={onModeSelect}
-            className={styles.continueButton}
+  <>
+    {!gameStarted && 
+
+      <div className={`${styles.container} ${showModeSelect ? styles.fullscreen : ''}`}>
+        <div className={styles.selector}>
+          <h2>{showModeSelect ? 'Select Game Mode' : 'Game Mode:'}</h2>
+          <select 
+            value={mode}
+            onChange={(e) => onModeChange(e.target.value as 'multiplayer' | 'ai')}
+            className={styles.dropdown}
+            disabled={gameStarted}
           >
-            Continue
-          </button>
-        )}
+            <option value="multiplayer">Multiplayer</option>
+            <option value="ai">Play vs AI</option>
+          </select>
+          {showModeSelect && (
+            <button 
+              onClick={onModeSelect}
+              className={styles.continueButton}
+            >
+              Continue
+            </button>
+          )}
+        </div>
       </div>
-    </div>
+    }
+  </>
   );
 } 

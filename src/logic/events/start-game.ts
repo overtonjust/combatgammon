@@ -23,10 +23,10 @@ export function backgammon() {
 
   -  John Locke. Lost.`,
     {
-      duration: 9000,
+      duration: 3000,
       style: {
         borderRadius: "10px",
-        background: "black",
+        background: "#2C3E6E",
         color: "#fff",
         border: "2px solid white",
       },
@@ -43,12 +43,12 @@ export function startingGame(game: Game): ThisTurn {
 
     if (whiteFirst + whiteSecond > blackFirst + blackSecond) {
       thisTurn = new ThisTurn(game.whitePlayer, game.blackPlayer, [], false);
-      toast.success("Game starts with ⚪ WHITE ⚪", toastStyle(thisTurn));
+      toast.success("Game starts with WHITE ", toastStyle(thisTurn));
 
       break;
     } else if (whiteFirst + whiteSecond < blackFirst + blackSecond) {
       thisTurn = new ThisTurn(game.blackPlayer, game.whitePlayer, [], false);
-      toast.success("Game starts with ⚫ BLACK ⚫", toastStyle(thisTurn));
+      toast.success("Game starts with Orange ", toastStyle(thisTurn));
 
       break;
     }

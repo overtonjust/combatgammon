@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import "./App.css";
+import "./App.scss";
 import { backgammon, startingGame } from "./logic/events/start-game";
 import { rollingDice } from "./logic/events/roll-dice";
 import { selecting } from "./logic/events/select";
@@ -151,43 +151,45 @@ function App() {
     }
   }
 
-  return (
-    <>
-      <GameTitle />
-      <GameModeSelector 
-        mode={gameMode} 
-        onModeChange={handleModeChange}
-        onModeSelect={handleModeSelect}
-        gameStarted={game.gameOn}
-        showModeSelect={showModeSelect}
-      />
-      {!showModeSelect && (
-        <>
-          <div className={game.gameOn ? "" : "preview-mode"}>
-            <BoardTop game={game} thisMove={thisMove} select={select} />
-            <BoardBottom
-              game={game}
-              thisMove={thisMove}
-              rollDice={rollDice}
-              startGame={startGame}
-              select={select}
-            />
-            <AICommentary game={game} thisTurn={thisTurn} />
-          </div>
-          {!game.gameOn && (
-            <div className="start-overlay">
-              <button 
-                onClick={() => handleStartGame(gameMode)}
-                className="start-button"
-              >
-                Begin Game
-              </button>
-            </div>
-          )}
-        </>
-      )}
-    </>
-  );
+ return (
+   <>
+     <GameTitle />
+     <div className="game-container">
+       <GameModeSelector 
+         mode={gameMode} 
+         onModeChange={handleModeChange}
+         onModeSelect={handleModeSelect}
+         gameStarted={game.gameOn}
+         showModeSelect={showModeSelect}
+       />
+       {!showModeSelect && (
+         <>
+           <div className={game.gameOn ? "" : "preview-mode"}>
+             <BoardTop game={game} thisMove={thisMove} select={select} />
+             <BoardBottom
+               game={game}
+               thisMove={thisMove}
+               rollDice={rollDice}
+               startGame={startGame}
+               select={select}
+             />
+             <AICommentary game={game} thisTurn={thisTurn} />
+           </div>
+           {!game.gameOn && (
+             <div className="start-overlay">
+               <button 
+                 onClick={() => handleStartGame(gameMode)}
+                 className="start-button"
+               >
+                 Begin Game
+               </button>
+             </div>
+           )}
+         </>
+       )}
+     </div>
+   </>
+ );
 }
 
 export default App;

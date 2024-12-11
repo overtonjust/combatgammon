@@ -5,6 +5,9 @@ import Bar from "./components/Bar";
 import Board from "./components/Board";
 import EndBar from "./components/EndBar";
 import Piece from "./components/Piece";
+import './styles.css'
+
+
 
 interface BoardProps {
   game: Game;
@@ -15,6 +18,10 @@ interface BoardProps {
 export default function BoardTop(props: BoardProps) {
   return (
     <div className="board-top">
+
+      <div className="item-holder item-left">
+        <h4 className="item-header header-left">White Power-ups</h4>
+      </div>
       <CreateEndBar
         player={props.game.whitePlayer}
         key={"left-bar"}
@@ -28,6 +35,11 @@ export default function BoardTop(props: BoardProps) {
         key={"right-bar"}
         {...props}
       />
+
+      <div className="item-holder item-right">
+        <h4 className="item-header header-right">Orange Power-ups</h4>
+      </div>
+
     </div>
   );
 
@@ -58,9 +70,9 @@ export default function BoardTop(props: BoardProps) {
         onClick={() => props.select(props.barIdx)}
         key={props.barIdx}
         fill={
-          (props.thisMove.canGoTo.includes(props.barIdx) && "#671010") ||
-          (props.barIdx % 2 === 0 && props.barIdx > 11 && "#232937") ||
-          (props.barIdx % 2 !== 0 && props.barIdx <= 11 && "#232937") ||
+          (props.thisMove.canGoTo.includes(props.barIdx) && "#21a315") ||
+          (props.barIdx % 2 === 0 && props.barIdx > 11 && "#D35D19") ||
+          (props.barIdx % 2 !== 0 && props.barIdx <= 11 && "#D35D19") ||
           (props.barIdx % 2 === 0 && props.barIdx <= 11 && "#e0ded7") ||
           (props.barIdx % 2 !== 0 && props.barIdx > 11 && "#e0ded7") ||
           "Red"
@@ -100,7 +112,7 @@ export default function BoardTop(props: BoardProps) {
       <EndBar
         onClick={() => props.select(props.player.endBarIdx)}
         key={props.player.endBarIdx}
-        fill={props.player.name === "White" ? "#e0ded7" : "#232937"}
+        fill={props.player.name === "White" ? "#e0ded7" : "#CD5C1C"}
       >
         {props.player.endBar.map((piece, pieceIdx) => (
           <CreatePiece

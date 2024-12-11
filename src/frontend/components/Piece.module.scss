@@ -1,0 +1,35 @@
+.piece {
+  --piece-size: min(calc(7vw - 12px), 40px);
+  width: var(--piece-size);
+  height: var(--piece-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  margin: 0 auto;
+  
+  @media (max-width: 1315px) {
+    --piece-size: calc(6.5vw - 10px);
+  }
+  
+  @media (max-width: 768px) {
+    --piece-size: calc(6vw - 8px);
+  }
+  
+  @media (max-width: 480px) {
+    --piece-size: calc(5.5vw - 6px);
+  }
+
+  @media (max-width: 375px) {
+    --piece-size: calc(4.8vw - 2px);
+    font-size: 0.65rem;
+  }
+
+  @media (max-width: 320px) {
+    --piece-size: calc(4.5vw - 1px);
+    font-size: 0.6rem;
+  }
+} 

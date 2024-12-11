@@ -18,7 +18,7 @@ export default function OutBar({ fill, isLeft, children, onClick }: Props) {
         {children}
       </div>
       <svg height="40" width="250">
-        <polygon
+        <polygon 
           points={isLeft ? "0,0 0,40 250,20" : "0,20 250,0 250,40"}
           className={styles.polygon}
         />

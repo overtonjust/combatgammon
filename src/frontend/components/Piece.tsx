@@ -12,9 +12,9 @@ export default function Piece(props: Props) {
     <div
       className={styles.piece}
       style={{
-        background: props.color !== "White" ? "black" : "#f8f7f3",
+        background: props.color !== "White" ? "#D35D19" : "#f8f7f3",
         border: props.border,
-        color: props.color === "White" ? "black" : "#f8f7f3",
+        color: props.color === "White" ? "#D35D19" : "#f8f7f3",
       }}
       {...props}
     />

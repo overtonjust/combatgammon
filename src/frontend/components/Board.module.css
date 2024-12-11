@@ -2,11 +2,11 @@
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  background: black;
+  background: #2C3E6E;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(8px, 1.5vw, 17px);
-  border: clamp(5px, 1vw, 10px) solid black;
+  border: clamp(5px, 1vw, 10px) solid #2C3E6E;
   align-items: center;
   align-content: space-between;
 }
